@@ -4,8 +4,8 @@ Three files are uploaded. In these files, Final11_multi_head_attention and Final
   Each file contains Main file, data loader, evaluation file. 
 ## Main file 
   contains infrmation about model and training parameters. 
-## 
-  Data loader file contains data loader function and data cheking function. 
-## 
-  Evaluation file contains testing function to calculate metrics. 
+## Data loader file 
+  contains data loader function and data cheking function. 
+## Evaluation file 
+  contains testing function to calculate metrics. 
 
