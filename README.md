@@ -45,9 +45,11 @@ contains data loader function and data cheking function.
 
 Data loader file has changed the input data into tensor data file and paring different data files for supervised learning. Here, data loader is paring image data, radar raw data, ground truth, SPMLX parameters and camera calibration informations. 
 
-Run this file first before any further training. There will be a fina10.log generated shown or somthing like that. Log file is collecting the error, recording which data has the problem will paring. Data_loader.py will skip the error file and it corresboned files. For example if image 1 can;t be read, radar 1 and parameter 1 will be skipped. 
+Run this file first before any further training. There will be a fina10.log generated shown or somthing like that. Log file is collecting the error, recording which data has the problem will paring. Data_loader.py will skip the error file and it corresboned files. For example if image 1 can't be read, radar 1 and parameter 1 will be skipped. 
 
-*** Please note, if run data_loader directly, log will collect first 10 paired files  
+*** Please note, if run data_loader directly, log will collect first 10 paired files and show the path of mat file and obj file, value of parameter file to check if the data is paired correctly. Then randomly plot 5 images to check if the performance of the calibration is right or not. 
+
+*** please note the rules of the folder name is following the name on maps3 server if using the data file from the link provided above, the rule of file names needs to be changed in load_mat and load_obj functions.
 
 ## Main file 
   contains infrmation about model and training parameters.  
