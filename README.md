@@ -5,8 +5,7 @@ detecting the small movement of the human body under high-frequency conditions.T
 model introduces a method for predicting human meshes using only radar signals as
 input data. Furthermore, the model is designed to work with a single person
 
-
-Three files are uploaded. In these files, Final11_multi_head_attention and Final11_single_head_attention are the one that not cameracalibrated. Final11_full_camera calibrated is using the vertices after camera calbration. But Final11_full_camera calibrated are still on going, has the problem with ploting meshes
+Three files are uploaded. Those are the three versions of the project. In these files, Final11_multi_head_attention and Final11_single_head_attention are the one that not cameracalibrated. Final11_full_camera calibrated is using the vertices after camera calbration. But Final11_full_camera calibrated are still on going, has the problem with ploting meshes
 # Description of the files
   Each file contains Main file, data loader, evaluation file. 
 ## Main file 
