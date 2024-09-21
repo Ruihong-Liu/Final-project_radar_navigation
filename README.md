@@ -21,8 +21,11 @@ link:https://pan.baidu.com/s/1euV5gBUYhxw2kgCDZGINGQ
 code: ahya
 
 Data: mmWave radar data, including RF signals, XYZ radar tensor (heatmap), point cloud, and RGB-D camera images
+
 Annotation: human body mesh, human body keypoints
+
 Size: 500k in total from 20 participants performing 50 activities
+
 Calibration:
 gb_matrix=np.array([[375.66860062,   0.      ,   319.99508973], [  0.    ,     375.66347079 ,239.41364796], [  0.     ,      0.      ,     1.        ]])
 radar2rgb_tvec=np.array([-0.03981857,1.35834002,-0.05225502])
@@ -30,15 +33,25 @@ radar2rgb_rotmatrix=np.array([[ 9.99458797e-01,  3.28646073e-02,  1.42475954e-03
 
 gb_matrix denotes the intrinsic matrix of the RGB-D camera, radar2rgb_tvec and radar2rgb_rotmatrix indicate the coordinates transformation matrix from radar to camera.
 
-**** Please notice the camera calibration here is the general calibration, if the file does not not include calibraition information, using this one instead. If the data file include clibrated information please use the calibration in the data.
+**** Please notice the camera calibration here is the general calibration, if the file does not not include calibraition information, using this one instead. If the data file include calibrated information please use the calibration in the data.
+
+**** Please notice the calibrated information or the data itself might not be paried correctly, Run data_lader.py first for paring checking and calibration checking. 
 
 # Description of the files
   Each file contains Main file, data loader, evaluation file. All the files are similar, only a few function has been modified, that will be specified in later sections.
+  
 ## Data loader file 
-contains data loader function and data cheking function.   Data loader file has changed the input data into tensor data file and paring different data file for supervised learning. 
+contains data loader function and data cheking function.   
+
+Data loader file has changed the input data into tensor data file and paring different data files for supervised learning. Here, data loader is paring image data, radar raw data, ground truth, SPMLX parameters and camera calibration informations. 
+
+Run this file first before any further training. There will be a fina10.log generated shown or somthing like that. Log file is collecting the error, recording which data has the problem will paring. Data_loader.py will skip the error file and it corresboned files. For example if image 1 can;t be read, radar 1 and parameter 1 will be skipped. 
+
+*** Please note, if run data_loader directly, log will collect first 10 paired files  
 
 ## Main file 
   contains infrmation about model and training parameters.  
+  
 ## Evaluation file 
   contains testing function to calculate metrics. 
 
