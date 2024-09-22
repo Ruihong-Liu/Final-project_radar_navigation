@@ -50,7 +50,34 @@ Run this file first before any further training. There will be a fina10.log gene
 *** Please note, if run data_loader directly, log will collect first 10 paired files and show the path of mat file and obj file, value of parameter file to check if the data is paired correctly. Then randomly plot 5 images to check if the performance of the calibration is right or not. 
 
 *** please note the rules of the folder name is following the name on maps3 server if using the data file from the link provided above, the rule of file names needs to be changed in load_mat and load_obj functions.
+### Functions include
+  gender_info: This part provided with gender information
 
+  load_mat_file: This part loaded mat file which is radar raw file by a name rules, if the path or name is changed, please re-write this part
+
+  load_obj_file: This part loaded obj file which is ground truth file by a name rules, if the path or name is changed, please re-write this part
+
+  extract_number: Take the number of the file name, for sorting
+
+  check_and_match_files: Check if the file and number maches
+
+  load_json_data: Load json file which are SMPLX parameters.
+
+  get_all_file_pairs: paring files base on the index after sorting.
+
+  RF3DPoseDataset: The class to pass the data into model.
+
+  ToTensor: convert data type to tensor
+
+  test_data_loader: To print some sample in log for checking if the paring are correct
+
+  if __name__ == "__main__":
+    root_dir = "DataUsing1"
+    file_pairs = get_all_file_pairs(root_dir)
+    dataset = RF3DPoseDataset(file_pairs, transform=ToTensor())
+
+    test_data_loader(dataset)
+    *** change the root_dir for root of the data.
 ## Main file 
   contains infrmation about model and training parameters.  
   
