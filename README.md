@@ -72,11 +72,13 @@ Run this file first before any further training. There will be a fina10.log gene
   test_data_loader: To print some sample in log for checking if the paring are correct
 
   *** main function for data_loader.py
+  
   if __name__ == "__main__":
     root_dir ="DataUsing1"
     file_pairs = get_all_file_pairs(root_dir)
     dataset = RF3DPoseDataset(file_pairs, transform=ToTensor())
     test_data_loader(dataset)
+    
   ***
   change the root_dir for root of the data.
 ## Main file 
