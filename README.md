@@ -75,9 +75,8 @@ Run this file first before any further training. There will be a fina10.log gene
     root_dir = "DataUsing1"
     file_pairs = get_all_file_pairs(root_dir)
     dataset = RF3DPoseDataset(file_pairs, transform=ToTensor())
-
     test_data_loader(dataset)
-    *** change the root_dir for root of the data.
+*** change the root_dir for root of the data.
 ## Main file 
   contains infrmation about model and training parameters.  
   
