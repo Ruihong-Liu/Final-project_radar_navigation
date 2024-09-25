@@ -40,6 +40,16 @@ gb_matrix denotes the intrinsic matrix of the RGB-D camera, radar2rgb_tvec and r
 # Description of the files
   Each file contains Main file, data loader, evaluation file. All the files are similar, only a few function has been modified, that will be specified in later sections.
 
+***
+
+Step1: Run data_loader_loader_main to test if the dataset is valid and check the sample data if paried correctly
+
+Step2: Run Train_and_model_main_train for training and validate the model
+
+step3: Find the best model which has the smallest loss and using evaluation function for testing.
+
+*** 
+
 ## data_loader_Load_data
   Contains all the loading functions. For other dataset, the rules of file names may change, therefore, this function may needs to be rewrite. 
   
@@ -62,7 +72,7 @@ gb_matrix denotes the intrinsic matrix of the RGB-D camera, radar2rgb_tvec and r
   The function about how to plot the 3D mesh
   
 ## Train_and_model_main_train
-  THe function including training, elvaluation, testing and ooptimizeing.
+  THe function including training, validation, testing and ooptimizeing.
 
 ## evaluation
   Metics for evalating the performance of the model.
