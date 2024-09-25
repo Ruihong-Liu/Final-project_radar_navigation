@@ -76,3 +76,5 @@ step3: Find the best model which has the smallest loss and using evaluation func
 
 ## evaluation
   Metics for evalating the performance of the model.
+# Problems
+  This Project is still having the problem on hands, the error of the mesh is still a bit too large. PLotting of mesh is shown nothing at the moment
