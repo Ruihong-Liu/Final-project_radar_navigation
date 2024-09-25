@@ -39,58 +39,30 @@ gb_matrix denotes the intrinsic matrix of the RGB-D camera, radar2rgb_tvec and r
 
 # Description of the files
   Each file contains Main file, data loader, evaluation file. All the files are similar, only a few function has been modified, that will be specified in later sections.
+
+## data_loader_Load_data
+  Contains all the loading functions. For other dataset, the rules of file names may change, therefore, this function may needs to be rewrite. 
   
-## Data loader file 
-contains data loader function and data cheking function.   
-
-Data loader file has changed the input data into tensor data file and paring different data files for supervised learning. Here, data loader is paring image data, radar raw data, ground truth, SPMLX parameters and camera calibration informations. 
-
-Run this file first before any further training. There will be a fina10.log generated shown or somthing like that. Log file is collecting the error, recording which data has the problem will paring. Data_loader.py will skip the error file and it corresboned files. For example if image 1 can't be read, radar 1 and parameter 1 will be skipped. 
-
-*** Please note, if run data_loader directly, log will collect first 10 paired files and show the path of mat file and obj file, value of parameter file to check if the data is paired correctly. Then randomly plot 5 images to check if the performance of the calibration is right or not. 
-
-*** please note the rules of the folder name is following the name on maps3 server if using the data file from the link provided above, the rule of file names needs to be changed in load_mat and load_obj functions.
-### Functions include
-  gender_info: This part provided with gender information
-
-  load_mat_file: This part loaded mat file which is radar raw file by a name rules, if the path or name is changed, please re-write this part
-
-  load_obj_file: This part loaded obj file which is ground truth file by a name rules, if the path or name is changed, please re-write this part
-
-  extract_number: Take the number of the file name, for sorting
-
-  check_and_match_files: Check if the file and number maches
-
-  load_json_data: Load json file which are SMPLX parameters.
-
-  get_all_file_pairs: paring files base on the index after sorting.
-
-  RF3DPoseDataset: The class to pass the data into model.
-
-  ToTensor: convert data type to tensor
-
-  test_data_loader: To print some sample in log for checking if the paring are correct
-
-  *** main function for data_loader.py
+## data_loader_camera_calibration
+  contains camera calibration informations and calculations
   
-    if __name__ == "__main__":
-    
-      root_dir ="DataUsing1"
-      
-      file_pairs = get_all_file_pairs(root_dir)
-      
-      dataset = RF3DPoseDataset(file_pairs, transform=ToTensor())
-      
-      test_data_loader(dataset)
-    
-  ***
-  change the root_dir for root of the data.
-## Main file 
-  contains infrmation about model and training parameters.  
-
-  Modle and training, evaluation, testing functions are all in this file. The model seems not working when I try to seperate them into different files.
-
+## data_loader_Plotting_projection
+  contains the projection function and plotting function
   
-## Evaluation file 
-  contains testing function to calculate metrics. 
+## data_loader_loader_main
+  the main file for the data preperation section, transfer data into tensor and paring for model training.
 
+## Train_and_model_model
+  Contains the setting up of the models including FPN, Multi-attention and SMPL-X
+  
+## Train_and_model_loss
+  The calculation of loss function of the model
+  
+## Train_and_model_plotting_3D_mesh
+  The function about how to plot the 3D mesh
+  
+## Train_and_model_main_train
+  THe function including training, elvaluation, testing and ooptimizeing.
+
+## evaluation
+  Metics for evalating the performance of the model.
