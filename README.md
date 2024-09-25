@@ -1,13 +1,13 @@
 # Final-project_radar_navigation
-Describtion: This paper presents the SimpleCFA model, a neural network that estimates 3D human meshes under challenging conditions such as poor lighting and low visibility environments, including fog and smoke. Millimeter-wave (mm-wave) radar signals can
-penetrate clothing and reflect off the human body. Also, mm-Wave has the benefit of
-detecting the small movement of the human body under high-frequency conditions.This
-model introduces a method for predicting human meshes using only radar signals as
-input data. Furthermore, the model is designed to work with a single person
+Describtion: This paper presents the SimpleCFA model, a neural network that estimates 3D human meshes under challenging conditions such as poor lighting and low visibility environments, including fog and smoke. Millimeter-wave (mm-wave) radar signals can penetrate clothing and reflect off the human body. Also, mm-Wave has the benefit of detecting the small movement of the human body under high-frequency conditions.This model introduces a method for predicting human meshes using only radar signals as input data. Furthermore, the model is designed to work with a single person Three files are uploaded. Those are the three versions of the project. 
 
-Three files are uploaded. Those are the three versions of the project. In these files, Final11_multi_head_attention and Final11_single_head_attention are the one that not cameracalibrated. Final11_full_camera calibrated is using the vertices after camera calbration. But Final11_full_camera calibrated are still on going, has the problem with ploting meshes
+In these files, Final11_multi_head_attention and Final11_single_head_attention are the one that not cameracalibrated. Final11_full_camera calibrated is using the vertices after camera calbration. But Final11_full_camera calibrated are still on going, has the problem with ploting meshes
 
 # Data collection and informations.
+On the server, Datas are under the path /mnt/data-B/Ruihong_radar. Within this path. 
+
+DataFinal is all the data donwloaded from BaiDU cloud, DataSet is original ZiP file, DataUsing is 7 peoples data can directly used with data_loader rules. DataUsing1 is one complete people data for testing, DataUsing2 are two conplete people data. DataUsing3 are one action for each two people, which is the smallest sample to test.
+
 The unprocessed Radar & RGB-D data is available at: 
 
 link: https://pan.baidu.com/s/1muGqz3sHmNDJU_CWt2aHvA 
